@@ -57,8 +57,8 @@ char	**ft_split(char *str, char c)
 	res = malloc(sizeof(char*) * (lines_count + 1));
 	if (!res)
 		return (NULL);
-	i = -1;
-	while (++i < lines_count)
+	i = 0;
+	while (i < lines_count)
 	{
 		res[i] = ft_next_line(str, c, i);
 		if (!res[i])
@@ -69,7 +69,8 @@ char	**ft_split(char *str, char c)
 			free(res);
 			return (NULL);
 		}
+		i++;
 	}
-	res[++i] = 0;
+	res[i] = 0;
 	return (res);
 }

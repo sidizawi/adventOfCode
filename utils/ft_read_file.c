@@ -31,6 +31,7 @@ char	*ft_read_file(char *file)
 		res = ft_join(res, buff);
 	}
 	close(fd);
+	free(buff);
 	return (res);
 }
 
