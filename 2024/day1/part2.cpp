@@ -10,7 +10,6 @@
 int main()
 {
 	int	i;
-	int	j;
 
 	std::string line;
 	std::string last;
@@ -41,11 +40,7 @@ int main()
 		while (line[i] && !isdigit(line[i]))
 			i++;
 
-		j = i;
-		while (line[i] && isdigit(line[i]))
-			i++;
-		
-		last = line.substr(j, i - j);
+		last = line.substr(i);
 
 		lst1.push_back(atoi(first.c_str()));
 		lst2.push_back(atoi(last.c_str()));
